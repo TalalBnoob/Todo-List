@@ -1,0 +1,27 @@
+@import 'imports';
+
+// Light Theme
+$veryLightGray: hsl(0, 0%, 98%);
+$VeryLight_GrayishBlue: hsl(236, 33%, 92%);
+$LightGrayish_Blue: hsl(233, 11%, 84%);
+$DarkGrayish_Blue: hsl(236, 9%, 61%);
+$VeryDark_GrayishBlue: hsl(235, 19%, 35%);
+
+// Dark Theme
+$VeryDarkBlue: hsl(235, 21%, 11%);
+$VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+$LightGrayishBlue: hsl(234, 39%, 85%);
+$LightGrayishBlue-hover: hsl(236, 33%, 92%);
+$DarkGrayishBlue: hsl(234, 11%, 52%);
+$VeryDarkGrayishBlue: hsl(233, 14%, 35%);
+$VeryDarkGrayishBlue: hsl(237, 14%, 26%);
+
+@mixin mainFont($waight: waight) {
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: $waight;
+}
+
+// @mixin font700() {
+// 	font-family: 'Josefin Sans', sans-serif;
+// 	font-weight: 700;
+// }
