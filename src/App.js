@@ -17,16 +17,21 @@ function App() {
 			done: true,
 		},
 		{
-			id: 1,
+			id: 3,
 			text: 'Watch fate/saty night movie',
 			done: false,
 		},
 	]);
 
+	const addTask = (task) => {
+		const id = Math.floor(Math.random() * 1000) + 1;
+		setTasks([...tasks, { id, ...task }]);
+	};
+
 	return (
 		<div className="App container">
 			<Header />
-			<CreatTask />
+			<CreatTask confirm={addTask} />
 			<Tasks tasks={tasks} />
 		</div>
 	);
