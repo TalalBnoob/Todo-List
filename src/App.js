@@ -45,7 +45,12 @@ function App() {
 		<div className="App container">
 			<Header />
 			<CreatTask confirm={addTask} />
-			<Tasks tasks={tasks} onDel={delTask} taggoleCheke={taggoleCheke} />
+			<Tasks
+				tasks={tasks}
+				onDel={delTask}
+				taggoleCheke={taggoleCheke}
+				numOfItems={tasks.length}
+			/>
 		</div>
 	);
 }

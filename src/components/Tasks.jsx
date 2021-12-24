@@ -1,6 +1,7 @@
+import FilterBar from './FilterBar';
 import Task from './Task';
 
-const Tasks = ({ tasks, onDel, taggoleCheke }) => {
+const Tasks = ({ tasks, onDel, taggoleCheke, numOfItems }) => {
 	return (
 		<div className="tasks">
 			{tasks.map((task) => {
@@ -14,6 +15,7 @@ const Tasks = ({ tasks, onDel, taggoleCheke }) => {
 					/>
 				);
 			})}
+			<FilterBar numOfItems={numOfItems} />
 		</div>
 	);
 };
