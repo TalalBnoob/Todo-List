@@ -3,6 +3,7 @@ import Header from './components/Header';
 import CreatTask from './components/CreatTask';
 import Tasks from './components/Tasks';
 import { useState } from 'react';
+import task from './components/Task';
 
 function App() {
 	const [tasks, setTasks] = useState([
@@ -28,11 +29,23 @@ function App() {
 		setTasks([...tasks, { id, ...task }]);
 	};
 
+	const delTask = (id) => {
+		setTasks(tasks.filter((task) => task.id !== id));
+	};
+
+	const taggoleCheke = (id) => {
+		setTasks(
+			tasks.map((task) =>
+				task.id === id ? { ...task, done: !task.done } : task
+			)
+		);
+	};
+
 	return (
 		<div className="App container">
 			<Header />
 			<CreatTask confirm={addTask} />
-			<Tasks tasks={tasks} />
+			<Tasks tasks={tasks} onDel={delTask} taggoleCheke={taggoleCheke} />
 		</div>
 	);
 }

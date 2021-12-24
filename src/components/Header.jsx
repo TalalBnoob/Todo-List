@@ -1,10 +1,10 @@
-import { FaSun } from 'react-icons/fa';
+import sun from '../img/icon-sun.svg';
 
 const Header = () => {
 	return (
 		<div className="header">
 			<h1 className="logo">T O D O</h1>
-			<FaSun className="themeIcon" />
+			<img src={sun} className="themeIcon" />
 		</div>
 	);
 };

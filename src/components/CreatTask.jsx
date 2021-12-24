@@ -14,7 +14,6 @@ function CreatTask({ confirm }) {
 		}
 
 		if (!text) {
-			alert('Noting to add');
 			return;
 		}
 
