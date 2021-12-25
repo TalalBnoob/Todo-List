@@ -154,6 +154,28 @@ img.delIcon {
 		color: $VeryDarkGrayishBlue;
 	}
 
+	& .radio {
+		display: none;
+	}
+
+	& label {
+		width: fit-content;
+		height: fit-content;
+		margin: 16px 10px;
+		color: $VeryDarkGrayishBlue;
+		font-size: small;
+		@include mainFont(700);
+		cursor: pointer;
+
+		&:hover {
+			color: $DarkGrayishBlue;
+		}
+
+		&:first-of-type {
+			margin-left: 100px;
+		}
+	}
+
 	& .btn {
 		width: fit-content;
 		height: fit-content;
@@ -180,5 +202,9 @@ img.delIcon {
 			color: $VeryDarkGrayishBlue;
 			@include mainFont(400);
 		}
+	}
+
+	& label.checked {
+		color: #63bcf6;
 	}
 }
