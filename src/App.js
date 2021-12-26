@@ -32,6 +32,10 @@ function App() {
 		setTasks(tasks.filter((task) => task.id !== id));
 	};
 
+	const clearTasks = (id) => {
+		setTasks(tasks.filter((task) => task.done === false));
+	};
+
 	const taggoleCheke = (id) => {
 		setTasks(
 			tasks.map((task) =>
@@ -49,6 +53,7 @@ function App() {
 				onDel={delTask}
 				taggoleCheke={taggoleCheke}
 				numOfItems={tasks.length}
+				clear={clearTasks}
 			/>
 		</div>
 	);

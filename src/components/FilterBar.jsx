@@ -4,6 +4,7 @@ const FilterBar = ({
 	isItActive,
 	isItCompleted,
 	onClick,
+	clear,
 }) => {
 	return (
 		<div className="filter">
@@ -49,7 +50,9 @@ const FilterBar = ({
 			{/* <button className="filter btn all">All</button>
 			<button className="filter btn active">Active</button>
 			<button className="filter btn completed">Completed</button> */}
-			<button className="btn clear">clear Completed</button>
+			<button className="btn clear" onClick={(e) => clear(e)}>
+				clear Completed
+			</button>
 		</div>
 	);
 };
