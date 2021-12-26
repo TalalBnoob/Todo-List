@@ -1,61 +1,48 @@
-import { useState } from 'react';
-
-const FilterBar = ({ numOfItems }) => {
-	const [all, setAll] = useState(true);
-	const [active, setActive] = useState(false);
-	const [completed, setCompleted] = useState(false);
-
-	const changeState = (e) => {
-		if (e.target.id === 'all') {
-			setAll(true);
-			setCompleted(false);
-			setActive(false);
-		} else if (e.target.id === 'active') {
-			setActive(true);
-			setAll(false);
-			setCompleted(false);
-		} else if (e.target.id === 'completed') {
-			setCompleted(true);
-			setActive(false);
-			setAll(false);
-		}
-	};
-
+const FilterBar = ({
+	numOfItems,
+	isItAll,
+	isItActive,
+	isItCompleted,
+	onClick,
+}) => {
 	return (
 		<div className="filter">
 			<p className="counter">{numOfItems} items left</p>
 
-			<label htmlFor="all" className={`${all && 'checked'}`}>
+			<label htmlFor="all" className={`${isItAll && 'checked'}`}>
 				All
 				<input
 					type="radio"
 					name="filter"
 					id="all"
 					className={`filter btn radio all`}
-					onChange={(e) => changeState(e)}
-					checked={all}
+					onChange={(e) => onClick(e)}
+					checked={isItAll}
 				/>
 			</label>
-			<label htmlFor="active" className={`${active && 'checked'}`}>
+			<label htmlFor="active" className={`${isItActive && 'checked'}`}>
 				Active
 				<input
 					type="radio"
 					name="filter"
 					id="active"
 					className={`filter btn radio active`}
-					onChange={(e) => changeState(e)}
-					checked={active}
+					onChange={(e) => onClick(e)}
+					checked={isItActive}
 				/>
 			</label>
-			<label htmlFor="completed" className={`${completed && 'checked'}`}>
+			<label
+				htmlFor="completed"
+				className={`${isItCompleted && 'checked'}`}
+			>
 				Completed
 				<input
 					type="radio"
 					name="filter"
 					id="completed"
 					className={`filter btn radio completed`}
-					onChange={(e) => changeState(e)}
-					checked={completed}
+					onChange={(e) => onClick(e)}
+					checked={isItCompleted}
 				/>
 			</label>
 
