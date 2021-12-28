@@ -2,13 +2,28 @@
 @import '_scss/var';
 
 body {
+	height: 100vh;
+	@include mainFont(400);
 	background-image: url(../img/bg-desktop-dark.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% 400px;
 	background-color: $VeryDarkBlue;
-	height: 100vh;
 	color: $veryLightGray;
-	@include mainFont(400);
+
+	&.dark-mode {
+		background-image: url(../img/bg-desktop-dark.jpg);
+		background-repeat: no-repeat;
+		background-size: 100% 400px;
+		background-color: $VeryDarkBlue;
+		color: $veryLightGray;
+	}
+	&.light-mode {
+		background-image: url(../img/bg-desktop-light.jpg);
+		background-repeat: no-repeat;
+		background-size: 100% 400px;
+		background-color: $veryLightGray;
+		color: $VeryDarkBlue;
+	}
 }
 
 .container {
@@ -19,6 +34,7 @@ body {
 
 .header h1 {
 	display: inline;
+	color: $veryLightGray;
 }
 
 .header .themeIcon {
@@ -38,17 +54,33 @@ h1.logo {
 	border-radius: 5px;
 	background-color: $VeryDarkDesaturatedBlue;
 	position: relative;
+
+	&.dark-mode {
+		background-color: $VeryDarkDesaturatedBlue;
+	}
+
+	&.light-mode {
+		background-color: $veryLightGray;
+	}
 }
 
 .circle {
 	position: absolute;
 	top: 23px;
 	left: 2rem;
-	border: $VeryDark_GrayishBlue 1px solid;
 	width: 35px;
 	height: 35px;
 	border-radius: 50%;
+	border: $VeryDark_GrayishBlue 1px solid;
 	cursor: pointer;
+
+	&.dark-mode {
+		border: $VeryDark_GrayishBlue 1px solid;
+	}
+
+	&.light-mode {
+		border: $LightGrayish_Blue 1px solid;
+	}
 
 	&.done {
 		background: linear-gradient(to bottom right, #63bcf6, #ab7bf3);
@@ -75,12 +107,27 @@ h1.logo {
 	float: right;
 	background: none;
 	border: none;
-	color: $LightGrayish_Blue;
 	font-size: 20px;
 	outline: none;
+	color: $LightGrayish_Blue;
 
 	.TaskInput::placeholder {
 		color: $DarkGrayishBlue;
+	}
+
+	&.dark-mode {
+		color: $LightGrayish_Blue;
+		.TaskInput::placeholder {
+			color: $DarkGrayishBlue;
+		}
+	}
+
+	&.light-mode {
+		color: $VeryDarkDesaturatedBlue;
+
+		.TaskInput::placeholder {
+			color: $VeryDark_GrayishBlue;
+		}
 	}
 }
 
@@ -93,11 +140,11 @@ h1.logo {
 	width: 100%;
 	height: 80px;
 	// border-radius: 5px;
-	border: $VeryDarkGrayishBlue2 1px solid;
 	border-left: none;
 	border-right: none;
-	background-color: $VeryDarkDesaturatedBlue;
 	position: relative;
+	background-color: $VeryDarkDesaturatedBlue;
+	border: $VeryDarkGrayishBlue2 1px solid;
 
 	&:first-child {
 		border-radius: 7px 7px 0px 0px;
@@ -122,6 +169,64 @@ h1.logo {
 	&:hover > img.delIcon {
 		display: block;
 	}
+
+	&.dark-mode {
+		background-color: $VeryDarkDesaturatedBlue;
+		border: $VeryDarkGrayishBlue2 1px solid;
+
+		&:first-child {
+			border-radius: 7px 7px 0px 0px;
+		}
+
+		h1.task--Text {
+			position: absolute;
+			top: 30px;
+			left: 5.6rem;
+			width: fit-content;
+			font-size: 20px;
+			@include mainFont(400);
+			color: $LightGrayishBlue;
+			cursor: default;
+		}
+
+		h1.task--Text.done {
+			text-decoration: line-through;
+			color: $VeryDarkGrayishBlue;
+		}
+
+		&:hover > img.delIcon {
+			display: block;
+		}
+	}
+
+	&.light-mode {
+		background-color: $veryLightGray;
+		border: $VeryLight_GrayishBlue 1px solid;
+
+		&:first-child {
+			border-radius: 7px 7px 0px 0px;
+		}
+
+		h1.task--Text {
+			position: absolute;
+			top: 30px;
+			left: 5.6rem;
+			width: fit-content;
+			font-size: 20px;
+			@include mainFont(400);
+			color: $VeryDark_GrayishBlue;
+			cursor: default;
+		}
+
+		h1.task--Text.done {
+			text-decoration: line-through;
+			color: $LightGrayish_Blue;
+		}
+
+		&:hover > img.delIcon {
+			display: block;
+		}
+	}
 }
 
 img.delIcon {
@@ -140,11 +245,11 @@ img.delIcon {
 	width: 100%;
 	height: 50px;
 	border-radius: 0px 0px 7px 7px;
-	border: $VeryDarkGrayishBlue2 1px solid;
-	background-color: $VeryDarkDesaturatedBlue;
 	position: relative;
 	display: flex;
 	flex-direction: left;
+	border: $VeryDarkGrayishBlue2 1px solid;
+	background-color: $VeryDarkDesaturatedBlue;
 
 	& .counter {
 		font-size: small;
@@ -201,11 +306,156 @@ img.delIcon {
 			white-space: nowrap;
 			color: $VeryDarkGrayishBlue;
 			@include mainFont(400);
+
+			&:hover {
+				color: $DarkGrayishBlue;
+			}
 		}
 	}
 
 	& label.checked {
 		color: #63bcf6;
+	}
+
+	&.dark-mode {
+		border: $VeryDarkGrayishBlue2 1px solid;
+		background-color: $VeryDarkDesaturatedBlue;
+
+		& .counter {
+			font-size: small;
+			width: fit-content;
+			margin: 16px 25px;
+			white-space: nowrap;
+			color: $VeryDarkGrayishBlue;
+		}
+
+		& .radio {
+			display: none;
+		}
+
+		& label {
+			width: fit-content;
+			height: fit-content;
+			margin: 16px 10px;
+			color: $VeryDarkGrayishBlue;
+			font-size: small;
+			@include mainFont(700);
+			cursor: pointer;
+
+			&:hover {
+				color: $DarkGrayishBlue;
+			}
+
+			&:first-of-type {
+				margin-left: 100px;
+			}
+		}
+
+		& .btn {
+			width: fit-content;
+			height: fit-content;
+			border: none;
+			margin: 16px 10px;
+			text-align: center;
+			color: $DarkGrayishBlue;
+			font-size: small;
+			@include mainFont(700);
+			cursor: pointer;
+
+			&:first-of-type {
+				margin-left: 100px;
+			}
+
+			&.clear {
+				font-size: small;
+				background: none;
+				border: none;
+				width: fit-content;
+				margin: 16px 25px;
+				margin-left: 90px;
+				white-space: nowrap;
+				color: $VeryDarkGrayishBlue;
+				@include mainFont(400);
+
+				&:hover {
+					color: $DarkGrayishBlue;
+				}
+			}
+		}
+
+		& label.checked {
+			color: #63bcf6;
+		}
+	}
+	&.light-mode {
+		border: $VeryLight_GrayishBlue 1px solid;
+		background-color: $veryLightGray;
+
+		& .counter {
+			font-size: small;
+			width: fit-content;
+			margin: 16px 25px;
+			white-space: nowrap;
+			color: $DarkGrayish_Blue;
+		}
+
+		& .radio {
+			display: none;
+		}
+
+		& label {
+			width: fit-content;
+			height: fit-content;
+			margin: 16px 10px;
+			color: $DarkGrayish_Blue;
+			font-size: small;
+			@include mainFont(700);
+			cursor: pointer;
+
+			&:hover {
+				color: $VeryDark_GrayishBlue;
+			}
+
+			&:first-of-type {
+				margin-left: 100px;
+			}
+		}
+
+		& .btn {
+			width: fit-content;
+			height: fit-content;
+			border: none;
+			margin: 16px 10px;
+			text-align: center;
+			color: $DarkGrayishBlue;
+			font-size: small;
+			@include mainFont(700);
+			cursor: pointer;
+
+			&:first-of-type {
+				margin-left: 100px;
+			}
+
+			&.clear {
+				font-size: small;
+				background: none;
+				border: none;
+				width: fit-content;
+				margin: 16px 25px;
+				margin-left: 90px;
+				white-space: nowrap;
+				color: $DarkGrayish_Blue;
+				@include mainFont(400);
+
+				&:hover {
+					color: $VeryDark_GrayishBlue;
+				}
+			}
+		}
+
+		& label.checked {
+			color: #63bcf6;
+		}
 	}
 }
 

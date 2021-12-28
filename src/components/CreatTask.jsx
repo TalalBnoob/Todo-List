@@ -1,7 +1,7 @@
 import CheckCircle from './CheckCircle';
 import { useState } from 'react';
 
-function CreatTask({ confirm }) {
+function CreatTask({ confirm, theme }) {
 	const [text, setText] = useState('');
 	const [done, setDone] = useState(false);
 
@@ -23,12 +23,12 @@ function CreatTask({ confirm }) {
 		setDone(false);
 	};
 	return (
-		<div className="CreatTask">
-			<CheckCircle />
+		<div className={`CreatTask ${theme ? 'dark-mode' : 'light-mode'}`}>
+			<CheckCircle theme={theme} />
 			<input
 				type="text"
 				name="Task"
-				className="TaskInput"
+				className={`TaskInput ${theme ? 'dark-mode' : 'light-mode'}`}
 				placeholder="Craet a new todo..."
 				onChange={(e) => {
 					setText(e.target.value);

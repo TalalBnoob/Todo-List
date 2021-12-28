@@ -2,7 +2,7 @@ import { useState } from 'react';
 import FilterBar from './FilterBar';
 import Task from './Task';
 
-const Tasks = ({ tasks, onDel, taggoleCheke, numOfItems, clear }) => {
+const Tasks = ({ tasks, onDel, taggoleCheke, numOfItems, clear, theme }) => {
 	const [all, setAll] = useState(true);
 	const [active, setActive] = useState(false);
 	const [completed, setCompleted] = useState(false);
@@ -35,6 +35,7 @@ const Tasks = ({ tasks, onDel, taggoleCheke, numOfItems, clear }) => {
 						isItShow={
 							active ? 'active' : completed ? 'completed' : 'all'
 						}
+						theme={theme}
 					/>
 				);
 			})}
@@ -45,6 +46,7 @@ const Tasks = ({ tasks, onDel, taggoleCheke, numOfItems, clear }) => {
 				isItCompleted={completed}
 				onClick={changeState}
 				clear={clear}
+				theme={theme}
 			/>
 		</div>
 	);

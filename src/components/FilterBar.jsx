@@ -5,9 +5,10 @@ const FilterBar = ({
 	isItCompleted,
 	onClick,
 	clear,
+	theme,
 }) => {
 	return (
-		<div className="filter">
+		<div className={`filter ${theme ? 'dark-mode' : 'light-mode'}`}>
 			<p className="counter">{numOfItems} items left</p>
 
 			<label htmlFor="all" className={`${isItAll && 'checked'}`}>

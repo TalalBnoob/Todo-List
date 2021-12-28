@@ -1,8 +1,13 @@
 import checkIcon from '../img/icon-check.svg';
 
-function CheckCircle({ taggole, isItDone }) {
+function CheckCircle({ taggole, isItDone, theme }) {
 	return (
-		<div className={`circle ${isItDone ? 'done' : ''}`} onClick={taggole}>
+		<div
+			className={`circle ${isItDone ? 'done' : ''} ${
+				theme ? 'dark-mode' : 'light-mode'
+			}`}
+			onClick={taggole}
+		>
 			<img
 				src={checkIcon}
 				alt=""

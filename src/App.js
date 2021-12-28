@@ -5,6 +5,7 @@ import Tasks from './components/Tasks';
 import { useState } from 'react';
 
 function App() {
+	const [darkTheme, setTheme] = useState(true);
 	const [tasks, setTasks] = useState([
 		{
 			id: 1,
@@ -22,6 +23,18 @@ function App() {
 			done: false,
 		},
 	]);
+
+	const changeTheme = () => {
+		setTheme(!darkTheme);
+		const body = document.querySelector('body');
+		if (darkTheme === true) {
+			body.classList.remove('dark-mode');
+			body.classList.add('light-mode');
+		} else {
+			body.classList.remove('light-mode');
+			body.classList.add('dark-mode');
+		}
+	};
 
 	const addTask = (task) => {
 		const id = Math.floor(Math.random() * 1000) + 1;
@@ -46,14 +59,15 @@ function App() {
 
 	return (
 		<div className="App container">
-			<Header />
-			<CreatTask confirm={addTask} />
+			<Header changeTheme={changeTheme} theme={darkTheme} />
+			<CreatTask confirm={addTask} theme={darkTheme} />
 			<Tasks
 				tasks={tasks}
 				onDel={delTask}
 				taggoleCheke={taggoleCheke}
 				numOfItems={tasks.length}
 				clear={clearTasks}
+				theme={darkTheme}
 			/>
 		</div>
 	);
