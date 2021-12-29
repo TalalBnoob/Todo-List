@@ -462,3 +462,66 @@ img.delIcon {
 .hide {
 	display: none;
 }
+
+@media (max-width: 786px) {
+	.container {
+		margin: 6rem auto;
+		width: 90%;
+		height: 100px;
+	}
+
+	.filter {
+		& label {
+			&:first-of-type {
+				margin-left: 50px;
+			}
+		}
+		& .btn {
+			&:first-of-type {
+				margin-left: 40px;
+			}
+			&.clear {
+				margin-left: 40px;
+			}
+		}
+		&.dark-mode {
+			& label {
+				&:first-of-type {
+					margin-left: 50px;
+				}
+			}
+			& .btn {
+				&:first-of-type {
+					margin-left: 40px;
+				}
+				&.clear {
+					margin-left: 40px;
+				}
+			}
+		}
+		&.light-mode {
+			& label {
+				&:first-of-type {
+					margin-left: 50px;
+				}
+			}
+			& .btn {
+				&:first-of-type {
+					margin-left: 40px;
+				}
+				&.clear {
+					margin-left: 40px;
+				}
+			}
+		}
+	}
+	img.delIcon {
+		display: block;
+	}
+	.task {
+		h1.task--Text {
+			max-width: 380px;
+			overflow: hidden;
+		}
+	}
+}
