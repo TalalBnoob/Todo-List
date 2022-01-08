@@ -1,5 +1,6 @@
 import CheckCircle from './CheckCircle';
 import { useState } from 'react';
+import Subbtn from './Subbtn';
 
 function CreatTask({ confirm, theme }) {
 	const [text, setText] = useState('');
@@ -12,6 +13,20 @@ function CreatTask({ confirm, theme }) {
 		if (e.key !== 'Enter') {
 			return;
 		}
+
+		if (!text) {
+			return;
+		}
+
+		confirm({ text, done });
+
+		setText('');
+		setDone(false);
+	};
+
+	const onSubmit2 = (e) => {
+		e.preventDefault();
+		console.log(1);
 
 		if (!text) {
 			return;
@@ -38,6 +53,7 @@ function CreatTask({ confirm, theme }) {
 				}}
 				value={text}
 			/>
+			<Subbtn onSubmit={onSubmit2} />
 		</div>
 	);
 }

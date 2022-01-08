@@ -103,8 +103,8 @@ h1.logo {
 
 .TaskInput {
 	height: 100%;
-	width: 85%;
-	float: right;
+	width: calc(85% - 80px);
+	margin-left: 100px;
 	background: none;
 	border: none;
 	font-size: 20px;
@@ -128,6 +128,19 @@ h1.logo {
 		.TaskInput::placeholder {
 			color: $VeryDark_GrayishBlue;
 		}
+	}
+}
+
+.submit-btn {
+	width: 60px;
+	height: 100%;
+	background: linear-gradient(to bottom right, #63bcf6, #ab7bf3);
+	float: right;
+
+	img {
+		width: 20px;
+		margin: 50%;
+		translate: -50%;
 	}
 }
 
@@ -614,12 +627,12 @@ img.delIcon {
 
 		& .checkIcon {
 			display: none;
-			padding: 8px;
+			padding: 7px;
 		}
 
 		& .show {
 			display: block;
-			padding: 8px;
+			padding: 7px;
 		}
 	}
 
@@ -678,7 +691,7 @@ img.delIcon {
 
 		h1.task--Text {
 			position: absolute;
-			top: 22px;
+			top: 18px;
 			left: 2.6rem;
 			width: fit-content;
 			font-size: 16px;
@@ -706,7 +719,7 @@ img.delIcon {
 
 			h1.task--Text {
 				position: absolute;
-				top: 22px;
+				top: 18px;
 				left: 2.6rem;
 				width: fit-content;
 				font-size: 16px;
@@ -735,7 +748,7 @@ img.delIcon {
 
 			h1.task--Text {
 				position: absolute;
-				top: 22px;
+				top: 18px;
 				left: 2.6rem;
 				width: fit-content;
 				font-size: 16px;
