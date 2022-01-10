@@ -103,7 +103,8 @@ h1.logo {
 
 .TaskInput {
 	height: 100%;
-	width: calc(85% - 80px);
+	width: calc(85% - 40px);
+	// width: 85%;
 	margin-left: 100px;
 	background: none;
 	border: none;
@@ -131,18 +132,16 @@ h1.logo {
 	}
 }
 
-.submit-btn {
-	width: 60px;
-	height: 100%;
-	background: linear-gradient(to bottom right, #63bcf6, #ab7bf3);
-	float: right;
+// .submit-btn {
+// 	width: 60px;
+// 	height: 100%;
+// 	background: linear-gradient(to bottom right, #63bcf6, #ab7bf3);
+// 	float: right;
 
-	img {
-		width: 20px;
-		margin: 50%;
-		translate: -50%;
-	}
+.submit-btn img {
+	display: none;
 }
+// }
 
 .tasks {
 	margin-top: 2rem;
@@ -168,6 +167,8 @@ h1.logo {
 		top: 30px;
 		left: 5.6rem;
 		width: fit-content;
+		overflow: hidden;
+		max-width: 70%;
 		font-size: 20px;
 		@include mainFont(400);
 		color: $LightGrayishBlue;
@@ -531,9 +532,53 @@ img.delIcon {
 	img.delIcon {
 		display: block;
 	}
+	.TaskInput {
+		height: 100%;
+		width: calc(85% - 80px);
+		margin-left: 80px;
+		background: none;
+		border: none;
+		outline: none;
+		font-size: 16px;
+		outline: none;
+		color: $LightGrayish_Blue;
+
+		.TaskInput::placeholder {
+			color: $DarkGrayishBlue;
+		}
+
+		&.dark-mode {
+			color: $LightGrayish_Blue;
+			.TaskInput::placeholder {
+				color: $DarkGrayishBlue;
+			}
+		}
+
+		&.light-mode {
+			color: $VeryDarkDesaturatedBlue;
+
+			.TaskInput::placeholder {
+				color: $VeryDark_GrayishBlue;
+			}
+		}
+	}
+
+	.submit-btn {
+		width: 60px;
+		height: 100%;
+		background: linear-gradient(to bottom right, #63bcf6, #ab7bf3);
+		float: right;
+
+		img {
+			display: block;
+			width: 20px;
+			margin: 53% 50%;
+			translate: -50%;
+		}
+	}
 	.task {
 		h1.task--Text {
-			max-width: 380px;
+			max-width: 70%;
 			overflow: hidden;
 		}
 	}
@@ -678,6 +723,7 @@ img.delIcon {
 		float: right;
 
 		img {
+			display: block;
 			width: 20px;
 			margin: 38% 50%;
 			translate: -50%;
@@ -733,10 +779,12 @@ img.delIcon {
 
 			h1.task--Text {
 				position: absolute;
-				top: 18px;
+				top: 22px;
 				left: 2.6rem;
 				width: fit-content;
 				font-size: 16px;
+				overflow: hidden;
+				max-width: 70%;
 				@include mainFont(400);
 				color: $LightGrayishBlue;
 				cursor: default;
