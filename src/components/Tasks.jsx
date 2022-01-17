@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import FilterBar from './FilterBar';
 import Task from './Task';
+import Nothing from './Nothing';
 
 const Tasks = ({ tasks, onDel, taggoleCheke, numOfItems, clear, theme }) => {
 	const [all, setAll] = useState(true);
@@ -24,21 +25,30 @@ const Tasks = ({ tasks, onDel, taggoleCheke, numOfItems, clear, theme }) => {
 	};
 	return (
 		<div className="tasks">
-			{tasks.map((task) => {
-				return (
-					<Task
-						key={task.id}
-						text={task.text}
-						isItDone={task.done}
-						onDel={() => onDel(task.id)}
-						taggole={() => taggoleCheke(task.id)}
-						isItShow={
-							active ? 'active' : completed ? 'completed' : 'all'
-						}
-						theme={theme}
-					/>
-				);
-			})}
+			{tasks.length === 0 ? (
+				<Nothing theme={theme} />
+			) : (
+				tasks.map((task) => {
+					return (
+						<Task
+							key={task.id}
+							text={task.text}
+							isItDone={task.done}
+							onDel={() => onDel(task.id)}
+							taggole={() => taggoleCheke(task.id)}
+							isItShow={
+								active
+									? 'active'
+									: completed
+									? 'completed'
+									: 'all'
+							}
+							theme={theme}
+						/>
+					);
+				})
+			)}
+
 			<FilterBar
 				numOfItems={numOfItems}
 				isItAll={all}

@@ -17,6 +17,7 @@ body {
 		background-color: $VeryDarkBlue;
 		color: $veryLightGray;
 	}
+
 	&.light-mode {
 		background-image: url(../img/bg-desktop-light.jpg);
 		background-repeat: no-repeat;
@@ -118,6 +119,7 @@ h1.logo {
 
 	&.dark-mode {
 		color: $LightGrayish_Blue;
+
 		.TaskInput::placeholder {
 			color: $DarkGrayishBlue;
 		}
@@ -141,6 +143,7 @@ h1.logo {
 .submit-btn img {
 	display: none;
 }
+
 // }
 
 .tasks {
@@ -157,6 +160,13 @@ h1.logo {
 	position: relative;
 	background-color: $VeryDarkDesaturatedBlue;
 	border: $VeryDarkGrayishBlue2 1px solid;
+
+	&.nothing {
+		font-size: large;
+		padding-top: 30px;
+		text-align: center;
+		color: $VeryDarkGrayishBlue;
+	}
 
 	&:first-child {
 		border-radius: 7px 7px 0px 0px;
@@ -188,6 +198,10 @@ h1.logo {
 		background-color: $VeryDarkDesaturatedBlue;
 		border: $VeryDarkGrayishBlue2 1px solid;
 
+		&.nothing {
+			color: $VeryDarkGrayishBlue;
+		}
+
 		&:first-child {
 			border-radius: 7px 7px 0px 0px;
 		}
@@ -216,6 +230,10 @@ h1.logo {
 	&.light-mode {
 		background-color: $veryLightGray;
 		border: $VeryLight_GrayishBlue 1px solid;
+
+		&.nothing {
+			color: $LightGrayish_Blue;
+		}
 
 		&:first-child {
 			border-radius: 7px 7px 0px 0px;
@@ -401,6 +419,7 @@ img.delIcon {
 			color: #63bcf6;
 		}
 	}
+
 	&.light-mode {
 		border: $VeryLight_GrayishBlue 1px solid;
 		background-color: $veryLightGray;
@@ -490,48 +509,58 @@ img.delIcon {
 				margin-left: 50px;
 			}
 		}
+
 		& .btn {
 			&:first-of-type {
 				margin-left: 40px;
 			}
+
 			&.clear {
 				margin-left: 40px;
 			}
 		}
+
 		&.dark-mode {
 			& label {
 				&:first-of-type {
 					margin-left: 50px;
 				}
 			}
+
 			& .btn {
 				&:first-of-type {
 					margin-left: 40px;
 				}
+
 				&.clear {
 					margin-left: 40px;
 				}
 			}
 		}
+
 		&.light-mode {
 			& label {
 				&:first-of-type {
 					margin-left: 50px;
 				}
 			}
+
 			& .btn {
 				&:first-of-type {
 					margin-left: 40px;
 				}
+
 				&.clear {
 					margin-left: 40px;
 				}
 			}
 		}
 	}
+
 	img.delIcon {
 		display: block;
 	}
+
 	.TaskInput {
 		height: 100%;
 		width: calc(85% - 80px);
@@ -549,6 +578,7 @@ img.delIcon {
 
 		&.dark-mode {
 			color: $LightGrayish_Blue;
+
 			.TaskInput::placeholder {
 				color: $DarkGrayishBlue;
 			}
@@ -576,6 +606,7 @@ img.delIcon {
 			translate: -50%;
 		}
 	}
+
 	.task {
 		h1.task--Text {
 			max-width: 70%;
@@ -601,6 +632,7 @@ img.delIcon {
 			background-color: $VeryDarkBlue;
 			color: $veryLightGray;
 		}
+
 		&.light-mode {
 			background-image: url(../img/bg-desktop-light.jpg);
 			background-repeat: no-repeat;
@@ -702,6 +734,7 @@ img.delIcon {
 
 		&.dark-mode {
 			color: $LightGrayish_Blue;
+
 			.TaskInput::placeholder {
 				color: $DarkGrayishBlue;
 			}
@@ -990,6 +1023,7 @@ img.delIcon {
 				color: #63bcf6;
 			}
 		}
+
 		&.light-mode {
 			border: $VeryLight_GrayishBlue 1px solid;
 			background-color: $veryLightGray;
