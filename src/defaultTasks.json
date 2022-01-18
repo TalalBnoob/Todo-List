@@ -1,0 +1,17 @@
+[
+	{
+		"id": 1,
+		"text": "Meeting in schools",
+		"done": false
+	},
+	{
+		"id": 2,
+		"text": "Go to gym",
+		"done": true
+	},
+	{
+		"id": 3,
+		"text": "Watch movie",
+		"done": false
+	}
+]
